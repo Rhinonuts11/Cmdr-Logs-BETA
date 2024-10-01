@@ -89,7 +89,7 @@ function setCookie(name, value, days) {
 // The handler for the click on the authorization button
 document.getElementById('auth-button').addEventListener('click', () => {
     const clientId = '1288151544159539274';
-    const redirectUri = 'YOUR_SITE_URL/.netlify/functions/callback';
+    const redirectUri = 'https://testban.netlify.app/.netlify/functions/callback';
     const scope = 'identify email';
     const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}`;
     window.location.href = authUrl;
