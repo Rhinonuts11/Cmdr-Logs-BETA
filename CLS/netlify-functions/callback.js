@@ -4,7 +4,7 @@ exports.handler = async function(event, context) {
     const code = event.queryStringParameters.code;
     const clientId = process.env.DISCORD_CLIENT_ID;
     const clientSecret = process.env.DISCORD_CLIENT_SECRET;
-    const redirectUri = 'YOUR_SITE_URL/.netlify/functions/callback';
+    const redirectUri = 'https://testban.netlify.app/.netlify/functions/callback';
 
     try {
         // Request to receive a token
@@ -46,7 +46,7 @@ exports.handler = async function(event, context) {
             statusCode: 302,
             headers: {
                 'Set-Cookie': `access_token=${tokenData.access_token}; Path=/; Secure; SameSite=Lax`,
-                'Location': 'YOUR_SITE_URL'
+                'Location': 'https://testban.netlify.app/'
             }
         };
     } catch (error) {
